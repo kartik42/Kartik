@@ -18,8 +18,8 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="200dp"
-                android:layout_height="45dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text=" Registration Form"
@@ -52,7 +52,7 @@
                     android:layout_height="40dp"
                     android:textSize="20dp"
                     android:background="#5676"
-                    android:hint="Enter First Name"
+                    android:hint="  Enter First Name"
                     android:layout_marginLeft="3dp"/>
             </LinearLayout>
             <TextView
@@ -78,7 +78,7 @@
                     android:layout_height="40dp"
                     android:textSize="20dp"
                     android:background="#5676"
-                    android:hint="Enter Last Name"
+                    android:hint="  Enter Last Name"
                     android:layout_marginLeft="3dp" />
             </LinearLayout>
             <TextView
@@ -137,7 +137,7 @@
                     android:layout_height="40dp"
                     android:textSize="20dp"
                     android:background="#5676"
-                    android:hint="Enter 10th marks"
+                    android:hint="  Enter 10th marks"
                     android:layout_marginLeft="5dp"
                     android:inputType="number"/>
 
@@ -169,7 +169,7 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="5dp"
                     android:background="#5676"
-                    android:hint="Enter 12th marks"
+                    android:hint="  Enter 12th marks"
                     android:textSize="20dp"
                     android:inputType="number" />
 
@@ -198,7 +198,7 @@
                     android:layout_height="40dp"
                     android:textSize="20dp"
                     android:background="#5676"
-                    android:hint="Enter Stream"
+                    android:hint="  Enter Stream"
                     android:layout_marginLeft="5dp" />
 
             </LinearLayout>
@@ -216,7 +216,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Father Name:"
+                    android:text="Father's Name:"
                     android:textSize="20dp"
                     android:layout_marginLeft="5dp" />
                 <EditText
@@ -225,7 +225,7 @@
                     android:layout_height="40dp"
                     android:textSize="20dp"
                     android:background="#5676"
-                    android:hint="Enter Father Name"
+                    android:hint=" Enter Father's Name"
                     android:layout_marginLeft="5dp" />
 
             </LinearLayout>
@@ -243,7 +243,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mother Neme:"
+                    android:text="Mother's Name:"
                     android:textSize="20dp"
                     android:layout_marginLeft="5dp" />
                 <EditText
@@ -252,7 +252,7 @@
                     android:layout_height="40dp"
                     android:textSize="20dp"
                     android:background="#5676"
-                    android:hint="Enter Mother Name"
+                    android:hint="  Enter Mother's Name"
                     android:layout_marginLeft="5dp" />
 
             </LinearLayout>
@@ -279,7 +279,7 @@
                     android:layout_height="40dp"
                     android:textSize="20dp"
                     android:background="#5676"
-                    android:hint="Enter City"
+                    android:hint="  Enter City"
                     android:layout_marginLeft="5dp" />
 
             </LinearLayout>
@@ -306,7 +306,7 @@
                     android:layout_height="40dp"
                     android:textSize="20dp"
                     android:background="#5676"
-                    android:hint="Enter Mobile Number"
+                    android:hint="  Enter Mobile Number"
                     android:layout_marginLeft="5dp"
                     android:inputType="number" />
 
@@ -390,7 +390,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Comment"
+                    android:text="Comment:"
                     android:textSize="20dp"
 
                     android:layout_marginLeft="5dp"/>
@@ -398,7 +398,7 @@
                     android:id="@+id/comment"
                     android:layout_width="300dp"
                     android:layout_height="100dp"
-                    android:hint="Enter your comments.."
+                    android:hint="  Enter Comments..."
                     android:layout_marginLeft="15dp"
                     android:background="#5676"/>
 
