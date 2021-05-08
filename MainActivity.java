@@ -1,6 +1,5 @@
 package com.example.registrationform;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,6 +8,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,11 +17,13 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     boolean invalid = false;
-    String Colector="";
+    String Colector="",Col="";
+
     TextView Space1,Space2,Space3,Space4,Space5,Space6,Space7,Space8,Space9,Space10,Space11;
     EditText FirstName,LastName,Marks,Markss,Stream,FatherName,MotherName,City,MobileNumber,Comment;
     Button SubmitSave;
-    RadioButton Cgpatbn,Percentbtn,Malebtn,Femalbtn,Otherbtn;
+    RadioGroup rg1, rg2;
+    RadioButton rd1,rd2, Cgpatbn,Percentbtn,Malebtn,Femalbtn,Otherbtn;
     CheckBox c,java,python;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Space1=findViewById(R.id.space1);
         LastName=findViewById(R.id.lastName);
         Space2=findViewById(R.id.space2);
+        rg1=findViewById(R.id.Rg1);
         Cgpatbn=findViewById(R.id.Cgpa);
         Percentbtn=findViewById(R.id.Percent);
         Space3=findViewById(R.id.space3);
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         Space9=findViewById(R.id.space9);
         MobileNumber=findViewById(R.id.mobileno);
         Space10=findViewById(R.id.space10);
+        rg2=findViewById(R.id.Rg2);
         Malebtn =findViewById(R.id.Male);
         Femalbtn=findViewById(R.id.Female);
         Otherbtn=findViewById(R.id.Other);
@@ -77,19 +81,23 @@ public class MainActivity extends AppCompatActivity {
                 else if(lname.isEmpty()){
                     Toast.makeText(MainActivity.this,"Pleas fill the  Last Name field",Toast.LENGTH_SHORT).show();
                 }
-                else if (fname.equals("kartik") || fname.equals("Kartik") || fname.equals("KARTIK") || lname.equals("raj") || lname.equals("Raj") || lname.equals("RAJ")){
-                    invalid=true;
+                else if (fname.equals("kartik") || fname.equals("Kartik") || fname.equals("KARTIK") || lname.equals("raj") || lname.equals("Raj") || lname.equals("RAJ")) {
+                    invalid = true;
                     Space2.setText("Name Already exist");
                     Space11.setText("ERROR");
-
-
                 }
+                
+               
+
+
                 else if(marks1.isEmpty()){
                     Toast.makeText(MainActivity.this,"Pleas fill the 10th marks field",Toast.LENGTH_SHORT).show();
                 }
                 else if(marks2.isEmpty()){
                     Toast.makeText(MainActivity.this,"Pleas fill the 12th marks field",Toast.LENGTH_SHORT).show();
                 }
+
+
                 else if(stream.isEmpty()){
                     Toast.makeText(MainActivity.this,"Pleas fill the Stream field",Toast.LENGTH_SHORT).show();
                 }
@@ -114,27 +122,61 @@ public class MainActivity extends AppCompatActivity {
 
                 else{
 
-                    Colector+=fname+"\n";
-                    Colector+=lname+"\n";
-                    Colector+=marks1+"\n";
-                    Colector+=marks2+"\n";
-                    Colector+=stream+"\n";
-                    Colector+=faname+"\n";
-                    Colector+=maname+"\n";
-                    Colector+=city+"\n";
-                    Colector+=contact+"\n";
-                    Colector+=comment+"\n";
+                    Colector+="First name: "+fname+"\n";
+                    Colector+="Last name: "+lname+"\n";
+                    int rad = rg1.getCheckedRadioButtonId();
+
+                    rd1 = (RadioButton)findViewById(rad);
+                    String mod = "";
+
+                    if (rad == -1) {
+                        Toast.makeText(getApplicationContext(),"any field is empty",Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    else {
+                        Col += rd1.getText().toString();
+                    }
+
+                    Colector+="10th marks: "+marks1+Col+"\n";
+                    Colector+="12th marks: "+marks2+Col+"\n";
+                    Colector+="Stream: "+stream+"\n";
+                    Colector+="Father's name: "+faname+"\n";
+                    Colector+="Mother's name: "+maname+"\n";
+                    Colector+="City: "+city+"\n";
+                    Colector+="Mobile Number: "+contact+"\n";
+
+
+
+                    int rad1 = rg2.getCheckedRadioButtonId();
+
+                    rd2 = (RadioButton)findViewById(rad1);
+                    String gen = "";
+
+                    if (rad1 == -1) {
+                        Toast.makeText(getApplicationContext(),"any field is empty",Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    else {
+                        Colector += "Gender: "+rd2.getText().toString()+"\n";
+                    }
+
+
+
+                    Colector+="Skills:"+"\n";
                     if (c.isChecked()){
-                        Colector+="C++"+"\n";
+                        Colector+="\t\t\t\t\t"+"C"+"\n";}
                         if (java.isChecked()){
-                            Colector+="JAVA"+"\n";
+                            Colector+="\t\t\t\t\t"+"JAVA"+"\n";
                         }
                         if (python.isChecked()){
-                            Colector+="PYTHON"+"\n";
+                            Colector+="\t\t\t\t\t"+"PYTHON"+"\n";
                         }
-                    }
+
+                    Colector+="Comment: "+comment+"\n";
                     Toast.makeText(MainActivity.this,"User Info \n:"+Colector,Toast.LENGTH_SHORT).show();
                 }
+                Colector=" ";
+                Col=" ";
 
             }
         });
