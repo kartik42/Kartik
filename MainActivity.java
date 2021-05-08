@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    boolean invalid = false;
+    
     String Colector="",Col="";
 
     TextView Space1,Space2,Space3,Space4,Space5,Space6,Space7,Space8,Space9,Space10,Space11;
