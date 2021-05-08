@@ -88,6 +88,7 @@
                 android:gravity="center"
                 android:textColor="#B71C1C"/>
             <RadioGroup
+                android:id="@+id/Rg1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -318,6 +319,7 @@
                 android:gravity="center"
                 android:textColor="#B71C1C"/>
             <RadioGroup
+                android:id="@+id/Rg2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -429,6 +431,3 @@
 
 
 </LinearLayout>
-
-
-
